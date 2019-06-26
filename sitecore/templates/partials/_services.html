@@ -1,0 +1,90 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+section {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    background-color: #f1f4fa;
+}
+.wrap {
+    display: flex;
+    background: white;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.wrap:hover {
+    background: linear-gradient(to right, #e0d6f0, #c7b3e7, #af90dc, #966ed1, #7d4bc5, #6b38b6, #5825a6, #450f97, #380c82, #2b096d, #1f0759, #150346);
+    color: rgb(253, 253, 253);
+}
+
+.ico-wrap {
+    margin: auto;
+}
+
+.mbr-iconfont {
+    font-size: 4.5rem !important;
+    color: #313131;
+    margin: 1rem;
+    padding-right: 1rem;
+}
+.vcenter {
+    margin: auto;
+}
+
+.mbr-section-title3 {
+    text-align: left;
+}
+h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.display-5 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 1.4rem;
+}
+.mbr-bold {
+    font-weight: 700;
+}
+
+ p {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    line-height: 25px;
+}
+.display-6 {
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 1re}
+
+</style>
+<section>
+    <div class="container">
+		<div class="row mbr-justify-content-center">
+            {% for service in services %}
+            <div class="col-sm-6">
+                <div class="wrap">
+                    <div class="ico-wrap">
+                        <div class="mbr-iconfont {{ service.fafa }} w3-text-orange "></div>
+                    </div>
+                    <div class="text-wrap vcenter">
+                        <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">{{ service.title }}</h2>
+                        <p class="mbr-fonts-style text1 mbr-text display-6">{{ service.statements|safe }}</p>
+                    </div>
+                </div>
+            </div>
+       
+            {% endfor %}   
+            <div class="w3-content w3-margin-top w3-center">
+                {% include 'partials/_servicebutton.html' %}
+                <a href="/about"><button  style="background-image: linear-gradient(to top, #1c042e, #381a57, #582f85, #7947b5, #9b60e9);" class=" w3-hide-large w3-hide-medium btn w3-border-theme w3-hover-white w3-text-white w3-hover-text-amber w3-large">Discover More About Us </button></a>
+            </div>    
+         </div> 
+    </div>
+</section>

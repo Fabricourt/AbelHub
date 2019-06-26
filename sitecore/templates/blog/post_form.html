@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<br>    <br>      <br>   
+<section class="w3-white w3-padding w3-margin-bottom w3-margin-top">
+<div class="w3-content" style="width:100%;">
+        <div class="w3-container w3-margin ">
+                <div class="w3-white">
+                        <div class="container">
+                                <nav aria-label="breadcrumb">
+                                  <ol class="breadcrumb w3-white">
+                                    <li class="breadcrumb-item">
+                                      <a href="{% url 'blog' %}">
+                                        <i class=" "></i> Back To Blog</a>
+                                    </li>
+                                    <li class="breadcrumb-item active"> Create</li>
+                                  </ol>
+                                </nav>
+                        </div>
+    
+          
+            <div class="content-section" style="width:100%;">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group ">
+                            <legend class="border-bottom mb-4">Blog Post</legend>
+                            <form method="POST" action="">
+                                    {% csrf_token %}
+                                    {{ form.media }}
+                                    {{ form}}
+                                    <input type="submit" value="Save">
+                                </form>
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-outline-info" type="submit">Post</button>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+<br /><br /><br /><br /><br /><br /><br />
+</div>
+</section>
+{% endblock %}

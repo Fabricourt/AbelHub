@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} | Home {% endblock %}
+{% block content %}
+
+{% include 'partials/_blog_header.html' %}
+
+
+<section>
+    {% include 'partials/_blog.html' %}
+</section>
+
+
+
+
+{% endblock %}
